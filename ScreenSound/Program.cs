@@ -42,7 +42,9 @@ void ExibirOpcoesDoMenu()
     switch (opcaoEscolhidaNumerica)
     {
         case 1:
-            RegistrarBanda();
+            MenuRegistrarBanda menu1 = new();
+            menu1.Executar(bandasRegistradas);
+            ExibirOpcoesDoMenu();
             break;
         case 2:
             RegistrarAlbum();
@@ -95,20 +97,6 @@ void RegistrarAlbum()
         Console.Clear();
     }
 
-    ExibirOpcoesDoMenu();
-}
-
-void RegistrarBanda()
-{
-    Console.Clear();
-    ExibirTituloDaOpcao("Registro das bandas");
-    Console.Write("Digite o nome da banda que deseja registrar: ");
-    string nomeDaBanda = Console.ReadLine()!;
-    Banda banda = new Banda(nomeDaBanda);
-    bandasRegistradas.Add(nomeDaBanda, banda);
-    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
-    Thread.Sleep(4000);
-    Console.Clear();
     ExibirOpcoesDoMenu();
 }
 void ExibirTituloDaOpcao(string titulo)
