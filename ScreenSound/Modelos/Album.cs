@@ -1,4 +1,4 @@
-﻿namespace ScrenSound.Modelos;
+﻿namespace ScreenSound.Modelos;
 
 internal class Album
 {
