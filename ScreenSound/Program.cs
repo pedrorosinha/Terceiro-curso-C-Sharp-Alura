@@ -48,7 +48,9 @@ void ExibirOpcoesDoMenu()
             RegistrarAlbum();
             break;
         case 3:
-            MostrarBandasRegistradas();
+            MenuExibirTodasBandasRegistradas menu3 = new();
+            menu3.Executar(bandasRegistradas);
+            ExibirOpcoesDoMenu();
             break;
         case 4:
             MenuAvaliarBanda menu4 = new();
@@ -109,24 +111,6 @@ void RegistrarBanda()
     Console.Clear();
     ExibirOpcoesDoMenu();
 }
-
-void MostrarBandasRegistradas()
-{
-    Console.Clear();
-    ExibirTituloDaOpcao("Exibindo todas as bandas registradas na nossa aplicação");
-
-    foreach (string banda in bandasRegistradas.Keys)
-    {
-        Console.WriteLine($"Banda: {banda}");
-    }
-
-    Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
-    Console.ReadKey();
-    Console.Clear();
-    ExibirOpcoesDoMenu();
-
-}
-
 void ExibirTituloDaOpcao(string titulo)
 {
     int quantidadeDeLetras = titulo.Length;
